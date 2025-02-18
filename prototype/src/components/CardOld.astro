@@ -1,0 +1,207 @@
+<style>
+  .view-content:has(> .views-row > .teaser--card) {
+  grid-template-columns: repeat(
+      var(--grid-repeat, auto-fit),
+      minmax(min(100%, var(--grid-min, 26ch)), 1fr)
+    );
+  gap: var(--sp2);
+}
+
+.views-row:has(> .teaser--card) {
+  display: grid;
+
+  @supports (container-type: inline-size) {
+    container-type: inline-size;
+  }
+}
+
+.teaser--card {
+  background-color: var(--color--gray-95);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  position: relative;
+
+  @container (min-width: 39rem) {
+    display: flex;
+    gap: var(--sp1);
+  }
+
+  &:hover {
+    background-color: var(--color--white);
+    box-shadow: var(--color--gray-90) 0 0 1.6rem;
+
+    &::after {
+      background-color: var(--color--primary-50);
+    }
+  }
+
+  &:focus-within {
+    background-color: var(--color--white);
+    outline: solid 2px var(--color-text-primary-medium);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    background: var(--color--primary-40) url("../../images/arrow-right.svg") no-repeat scroll center;
+    inline-size: 2.25rem;
+    block-size: 2.25rem;
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    flex-shrink: 0;
+  }
+}
+
+.teaser--card .teaser__content {
+  padding-block: 1.125rem 4rem;
+  padding-inline: 1.125rem 2rem;
+  max-inline-size: 528px;
+  text-wrap: pretty;
+
+  @container (min-width: 39rem) {
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem 4rem;
+  }
+
+  .node__meta,
+  .field--name-field-event__date,
+  .field--name-field-case-study__client-name,
+  .field--name-field-project__client-name,
+  .field--name-field-person__role-job-title {
+    color: var(--color--gray-40);
+    font-size: 0.875rem;
+    line-height: var(--sp);
+  }
+}
+
+.teaser--card:hover .teaser__content::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  background-color: var(--color--gray-65);
+  inline-size: 6px;
+}
+
+.teaser--card .teaser__title {
+  margin-block: 0 .5rem;
+  font-size: 1.5rem;
+  line-height: 1.125;
+  text-wrap: balance;
+
+  & a {
+    &:is(:focus-visible, :focus, :hover) {
+      outline: none;
+      color: inherit;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
+}
+
+.teaser--card .teaser__image {
+  background-color: var(--color--white);
+  aspect-ratio: 16/9;
+  position: relative;
+  z-index: 1;
+
+  @container (min-width: 39rem) {
+    max-inline-size: 33%;
+  }
+
+  & img {
+    object-fit: cover;
+  }
+
+  & :is(div, picture, img) {
+    height: 100%;
+    display: block;
+  }
+}
+
+.node--type-person.teaser--card {
+  .teaser__content {
+    max-inline-size: fit-content;
+
+    @container (min-width: 39rem) {
+      padding-inline: 0 4rem;
+    }
+  }
+
+  .teaser__image {
+    background-color: transparent;
+    aspect-ratio: 1/1;
+    padding: 18px 18px 0 18px;
+    max-height: 200px;
+
+    @container (min-width: 39rem) {
+      max-height: unset;
+      padding: 18px 0 18px 18px;
+    }
+
+    &:hover {
+      background-color: inherit;
+    }
+
+    &:hover::before {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      inset-inline-start: 0;
+      background-color: var(--color--gray-65);
+      inline-size: 6px;
+    }
+  }
+}
+
+</style>
+
+<article class="node node--type-news node--promoted node--view-mode-card teaser teaser--card">
+  <div class="teaser__image">
+
+        <div class="field field--name-field-featured-image field--type-entity-reference field--label-hidden field__item"><div class="media media--type-image media--view-mode-_6-9-medium">
+
+
+<div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+          <div class="field__item">    <picture>
+              <source srcset="https://plus.unsplash.com/premium_photo-1711051475117-f3a4d3ff6778?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 512w, https://plus.unsplash.com/premium_photo-1711051475117-f3a4d3ff6778?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 608w, https://plus.unsplash.com/premium_photo-1711051475117-f3a4d3ff6778?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 720w" media="all and (min-width: 500px)" type="image/webp" sizes="100vw" width="720" height="405">
+              <img loading="lazy" width="512" height="288" src="https://plus.unsplash.com/premium_photo-1711051475117-f3a4d3ff6778?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Three people sitting on a couch pointing at a laptop.">
+
+</picture>
+
+</div>
+      </div>
+
+</div>
+</div>
+
+</div>
+<div class="teaser__content">
+<header>
+          <h2 class="node__title teaser__title">
+      <a href="/news/2025-01/drupal-cms-strategic-initiative-future" rel="bookmark">
+<span>Drupal CMS: A strategic initiative for the future</span>
+</a>
+    </h2>
+        <div class="teaser__meta">
+              <div class="node__meta">
+      <span>
+        9 January 2025
+      </span>
+
+      </div>
+          </div>
+</header>
+
+        <div class="field field--name-field-description field--type-string-long field--label-hidden field__item">Drupal is simplifying website building by enhancing its user interface, streamlining site setup, and adding low-code/no-code tools. These improvements make the platform more accessible to both developers and non-technical users, enabling faster, easier site creation while maintaining Drupal’s robust features, performance, and security.</div>
+
+</div>
+</article>

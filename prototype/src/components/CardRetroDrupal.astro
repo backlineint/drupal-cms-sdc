@@ -1,5 +1,6 @@
 <style>
 :root {
+  :root {
   font-family: "VT323", monospace;
   line-height: 1.5;
   font-weight: 400;
@@ -73,39 +74,6 @@ body {
   object-fit: cover;
   filter: saturate(150%) contrast(110%) brightness(90%);
   border-bottom: 2px solid #0678BE;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.card-image.glitch {
-  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both;
-}
-
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-    filter: saturate(150%) contrast(110%) brightness(90%);
-  }
-  20% {
-    transform: translate(-5px, 5px);
-    filter: saturate(200%) contrast(150%) brightness(70%) hue-rotate(90deg);
-  }
-  40% {
-    transform: translate(5px, -5px);
-    filter: saturate(300%) contrast(200%) brightness(120%) hue-rotate(-90deg);
-  }
-  60% {
-    transform: translate(-3px, 3px);
-    filter: saturate(200%) contrast(150%) brightness(50%) hue-rotate(45deg);
-  }
-  80% {
-    transform: translate(3px, -3px);
-    filter: saturate(150%) contrast(110%) brightness(90%) hue-rotate(-45deg);
-  }
-  100% {
-    transform: translate(0);
-    filter: saturate(150%) contrast(110%) brightness(90%);
-  }
 }
 
 .card-content {
@@ -141,30 +109,6 @@ body {
   letter-spacing: 1px;
   border: 1px solid #003CC5;
   text-shadow: 0 0 5px rgba(0, 60, 197, 0.5);
-  cursor: pointer;
-  user-select: none;
-}
-
-.tag.flicker {
-  animation: flicker 0.3s ease-in-out;
-}
-
-@keyframes flicker {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  75% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .card-title {
@@ -208,28 +152,6 @@ body {
   text-shadow: none;
 }
 </style>
-
-<script>
-  // Add glitch effect to image on click
-const cardImage = document.querySelector('.card-image');
-cardImage?.addEventListener('click', () => {
-  cardImage.classList.add('glitch');
-  setTimeout(() => {
-    cardImage.classList.remove('glitch');
-  }, 300);
-});
-
-// Add flicker effect to tags on click
-const tags = document.querySelectorAll('.tag');
-tags.forEach(tag => {
-  tag.addEventListener('click', () => {
-    tag.classList.add('flicker');
-    setTimeout(() => {
-      tag.classList.remove('flicker');
-    }, 300);
-  });
-});
-</script>
 
 <div id="app">
   <div class="card">
