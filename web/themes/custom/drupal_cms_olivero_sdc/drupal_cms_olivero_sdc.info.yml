@@ -1,0 +1,36 @@
+name: drupal_cms_olivero_sdc
+description: ''
+type: theme
+'base theme': olivero
+core_version_requirement: ^11
+starterkit: true
+libraries:
+  - drupal_cms_olivero_sdc/global-styling
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  hero: 'Hero (full width)'
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  social: 'Social Bar'
+  content_above: 'Content Above'
+  content: Content
+  sidebar: Sidebar
+  content_below: 'Content Below'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'
+libraries-extend:
+  views/views.module:
+    - drupal_cms_olivero_sdc/views
+  search_api_autocomplete/search_api_autocomplete:
+    - drupal_cms_olivero_sdc/search-api-autocomplete
+libraries-override:
+  olivero/global-styling:
+    css:
+      component:
+        css/components/layout-field.css: false
+version: 1.0.0
+project: drupal_cms_olivero_sdc
+datestamp: 1737571757
+generator: 'drupal_cms_olivero:1.0.1'
