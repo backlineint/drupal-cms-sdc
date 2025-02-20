@@ -5,6 +5,9 @@ global-styling:
       css/base/buttons.css: {}
       css/base/typography.css: {}
       css/base/utility.css: {}
+      https://fonts.googleapis.com/css2?family=VT323&display=swap:
+        { type: external, minified: true }
+
     component:
       css/components/form.css: {}
 views:

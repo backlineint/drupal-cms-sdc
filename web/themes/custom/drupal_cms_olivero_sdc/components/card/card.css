@@ -11,19 +11,21 @@
 }
 
 retro-card {
-  :root {
+  font-family: "VT323", monospace;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  background-color: #1b1b1b;
+  background-image: linear-gradient(
+      rgba(27, 27, 27, 0.9),
+      rgba(27, 27, 27, 0.9)
+    ),
+    linear-gradient(90deg, rgba(6, 120, 190, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(6, 120, 190, 0.1) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+
+  h2 {
     font-family: "VT323", monospace;
-    line-height: 1.5;
-    font-weight: 400;
-    color-scheme: light;
-    background-color: #1b1b1b;
-    background-image: linear-gradient(
-        rgba(27, 27, 27, 0.9),
-        rgba(27, 27, 27, 0.9)
-      ),
-      linear-gradient(90deg, rgba(6, 120, 190, 0.1) 1px, transparent 1px),
-      linear-gradient(rgba(6, 120, 190, 0.1) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
   }
 
   .card {
