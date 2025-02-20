@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Card from '../components/Card.astro';
 import Layout from '../layouts/Layout.astro';
 
@@ -8,5 +7,27 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<Card />
+	<Card
+    title="Synthwave Dreams"
+    date="March 14, 2024"
+  >
+    <img slot="image" src="https://picsum.photos/400/250" alt="Card image">
+    <p slot="body">Welcome to the future that never was. A nostalgic journey through neon-lit streets and digital horizons. Where synthwave meets design in a perfect harmony.</p>
+  </Card>
 </Layout>
+
+<style is:global>
+  body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+#app {
+  max-width: 400px;
+  width: 100%;
+}
+</style>

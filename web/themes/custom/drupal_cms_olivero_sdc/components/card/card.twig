@@ -1,0 +1,23 @@
+<retro-card>
+    <div class="card">
+      <div class="card-image">
+        {% block image %}{% endblock %}
+      </div>
+      <div class="card-content">
+        <div class="card-meta">
+          {% if display_submitted %}
+            <span class="date">{{date}}</span>
+          {% endif %}
+          <div class="tags">
+            <span class="tag">Retro</span>
+            <span class="tag">80s</span>
+          </div>
+        </div>
+        <h2 class="card-title">title</h2>
+        <div class="card-text">
+          {% block body %}{% endblock %}
+        </div>
+        <a href="#" class="read-more">Jack In →</a>
+      </div>
+    </div>
+</retro-card>

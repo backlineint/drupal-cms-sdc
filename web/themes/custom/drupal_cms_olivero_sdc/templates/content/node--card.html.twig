@@ -73,6 +73,18 @@
 ]
 %}
 {% set featured_image = content.field_featured_image|render %}
+{% embed 'drupal_cms_olivero_sdc:card' with { date: date} %}
+  {% block body %}
+    {{ content|without('field_featured_image', 'links') }}
+  {% endblock %}
+  {% block image %}
+    {% if featured_image|trim %}
+      <div class="card__image">
+        {{~ featured_image ~}}
+      </div>
+    {% endif %}
+  {% endblock %}
+{% endembed %}
 <article{{ attributes.addClass(classes) }}>
   {% if featured_image|trim %}
     <div class="teaser__image">
