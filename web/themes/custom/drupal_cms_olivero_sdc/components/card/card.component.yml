@@ -14,7 +14,14 @@ props:
       type: string
       title: title
       description: "Title of the content"
+    url:
+      type: string
+      title: URL
+      description: "URL to link to the content"
 slots:
   body:
     title: Body
     description: Body markup
+  image:
+    title: Image
+    description: Featured image

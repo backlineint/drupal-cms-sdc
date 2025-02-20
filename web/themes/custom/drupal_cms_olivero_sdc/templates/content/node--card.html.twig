@@ -73,19 +73,22 @@
 ]
 %}
 {% set featured_image = content.field_featured_image|render %}
-{% embed 'drupal_cms_olivero_sdc:card' with { date: date, tag: content.field_tags, title: label} %}
+{% embed 'drupal_cms_olivero_sdc:card' with {
+  date: date,
+  tag: content.field_tags,
+  title: label,
+  url: url
+} %}
   {% block body %}
     {{ content|without('field_featured_image', 'links', 'field_tags', 'field_case_study__client_name', 'field_project__client_name') }}
   {% endblock %}
   {% block image %}
     {% if featured_image|trim %}
-      <div class="card__image">
-        {{~ featured_image ~}}
-      </div>
+      {{~ featured_image ~}}
     {% endif %}
   {% endblock %}
 {% endembed %}
-<article{{ attributes.addClass(classes) }}>
+{# <article{{ attributes.addClass(classes) }}>
   {% if featured_image|trim %}
     <div class="teaser__image">
       {{~ featured_image ~}}
@@ -111,4 +114,4 @@
     </header>
     {{ content|without('field_featured_image', 'links') }}
   </div>
-</article>
+</article> #}

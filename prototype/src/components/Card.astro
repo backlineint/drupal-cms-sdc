@@ -3,9 +3,10 @@ interface Props {
   date: string;
   tag: string;
   title: string;
+  url: string;
 }
 
-const { title, date, tag } = Astro.props;
+const { title, date, tag, url } = Astro.props;
 ---
 
 <style is:global>
@@ -27,6 +28,7 @@ retro-card {
   }
 
   .card {
+    height: 100%;
     background: #2B2B2B;
     border-radius: 0;
     overflow: hidden;
@@ -254,7 +256,7 @@ tags.forEach(tag => {
         <div class="card-text">
           <slot name="body" />
         </div>
-        <a href="#" class="read-more">Jack In →</a>
+        <a href={url} class="read-more">Jack In →</a>
       </div>
     </div>
 </retro-card>
