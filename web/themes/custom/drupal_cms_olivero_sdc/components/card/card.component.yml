@@ -6,6 +6,10 @@ props:
       type: string
       title: date
       description: "The date content was created"
+    tag:
+      type: string
+      title: tag
+      description: "Tag associated with the content"
     title:
       type: string
       title: title

@@ -1,10 +1,11 @@
 ---
 interface Props {
-  title: string;
   date: string;
+  tag: string;
+  title: string;
 }
 
-const { title, date } = Astro.props;
+const { title, date, tag } = Astro.props;
 ---
 
 <style is:global>
@@ -246,8 +247,7 @@ tags.forEach(tag => {
         <div class="card-meta">
           <span class="date">{date}</span>
           <div class="tags">
-            <span class="tag">Retro</span>
-            <span class="tag">80s</span>
+            <span class="tag">{tag}</span>
           </div>
         </div>
         <h2 class="card-title">{title}</h2>

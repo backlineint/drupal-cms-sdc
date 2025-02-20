@@ -8,10 +8,11 @@
           {% if display_submitted %}
             <span class="date">{{date}}</span>
           {% endif %}
+          {% if tag %}
           <div class="tags">
-            <span class="tag">Retro</span>
-            <span class="tag">80s</span>
+            <span class="tag">{{tag}}</span>
           </div>
+          {% endif %}
         </div>
         <h2 class="card-title">{{title}}</h2>
         <div class="card-text">
