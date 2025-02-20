@@ -73,7 +73,7 @@
 ]
 %}
 {% set featured_image = content.field_featured_image|render %}
-{% embed 'drupal_cms_olivero_sdc:card' with { date: date} %}
+{% embed 'drupal_cms_olivero_sdc:card' with { date: date, title: label} %}
   {% block body %}
     {{ content|without('field_featured_image', 'links') }}
   {% endblock %}

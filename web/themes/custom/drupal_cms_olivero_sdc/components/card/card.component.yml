@@ -6,6 +6,10 @@ props:
       type: string
       title: date
       description: "The date content was created"
+    title:
+      type: string
+      title: title
+      description: "Title of the content"
 slots:
   body:
     title: Body
